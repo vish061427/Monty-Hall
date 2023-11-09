@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<div class="game-simulation-form">
+    <h2>Monty Hall Game Simulation</h2>
+    <form (ngSubmit)="startSimulation()">
+      <div class="form-group">
+        <label for="numSimulations">Number of Simulations:</label>
+        <input type="number" id="numSimulations" name="numSimulations" [(ngModel)]="numSimulations" required>
+      </div>
+  
+      <div class="form-group">
+        <label>Change Chosen Door:</label>
+        <input type="radio" id="changeDoorTrue" name="changeDoor" [(ngModel)]="changeDoor" [value]="true" required>
+        <label for="changeDoorTrue">Yes</label>
+        <input type="radio" id="changeDoorFalse" name="changeDoor" [(ngModel)]="changeDoor" [value]="false" required>
+        <label for="changeDoorFalse">No</label>
+      </div>
+  
+      <button type="submit">Start Simulation</button>
+    </form>
+    <div *ngIf="winPercentage">
+      <p>Winning Percentage: {{ winPercentage }}%</p>
+    </div>
+  </div>
